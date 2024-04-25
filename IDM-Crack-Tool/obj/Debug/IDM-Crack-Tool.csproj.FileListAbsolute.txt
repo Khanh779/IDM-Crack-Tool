@@ -1,0 +1,10 @@
+D:\Data\Tailieu\Projects\C#\IDM-Crack-Tool\IDM-Crack-Tool\obj\Debug\IDM-Crack-Tool.csproj.AssemblyReference.cache
+D:\Data\Tailieu\Projects\C#\IDM-Crack-Tool\IDM-Crack-Tool\obj\Debug\IDM_Crack_Tool.Form1.resources
+D:\Data\Tailieu\Projects\C#\IDM-Crack-Tool\IDM-Crack-Tool\obj\Debug\IDM_Crack_Tool.Properties.Resources.resources
+D:\Data\Tailieu\Projects\C#\IDM-Crack-Tool\IDM-Crack-Tool\obj\Debug\IDM-Crack-Tool.csproj.GenerateResource.cache
+D:\Data\Tailieu\Projects\C#\IDM-Crack-Tool\IDM-Crack-Tool\obj\Debug\IDM-Crack-Tool.csproj.CoreCompileInputs.cache
+D:\Data\Tailieu\Projects\C#\IDM-Crack-Tool\IDM-Crack-Tool\bin\Debug\IDM-Crack-Tool.exe.config
+D:\Data\Tailieu\Projects\C#\IDM-Crack-Tool\IDM-Crack-Tool\bin\Debug\IDM-Crack-Tool.exe
+D:\Data\Tailieu\Projects\C#\IDM-Crack-Tool\IDM-Crack-Tool\bin\Debug\IDM-Crack-Tool.pdb
+D:\Data\Tailieu\Projects\C#\IDM-Crack-Tool\IDM-Crack-Tool\obj\Debug\IDM-Crack-Tool.exe
+D:\Data\Tailieu\Projects\C#\IDM-Crack-Tool\IDM-Crack-Tool\obj\Debug\IDM-Crack-Tool.pdb
