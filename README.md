@@ -8,7 +8,7 @@
 - Activate IDM
 
 ## Installation
-1. Require .Net Framework 4.7 or higher.
+1. Require .Net Framework 4.7.2 or higher.
 2. Run with administrator privileges to avoid errors or incomplete information retrieval.
 3. Visual Studio and supporting tools to run the program.
 
@@ -21,7 +21,7 @@
 - Kích hoạt IDM
 
 ## Cài đặt
-1. Yêu cầu .Net Framework 4.7 trở lên.
+1. Yêu cầu .Net Framework 4.7.2 hoặc cao hơn.
 2. Chạy với đặc quyền của quản trị viên để tránh lỗi hoặc truy xuất thông tin không đầy đủ.
 3. Visual Studio và các công cụ hỗ trợ chạy chương trình.
 
