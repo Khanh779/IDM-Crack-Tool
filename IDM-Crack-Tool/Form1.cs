@@ -18,7 +18,7 @@ namespace IDM_Crack_Tool
         }
 
         string fms = ("          --- Internet Download Manager (IDM) ---\n- IDM Status: {0}\n- Version: {1}" +
-        "\n- Activation Status: {2} ({3} day(s) remaining).");
+        "\n- Activation Status: {2}" + (Process_IDM.CheckInstalledIDM()==false?".":"( {3} day(s) remaining)."));
 
         protected override void OnClientSizeChanged(EventArgs e)
         {
@@ -84,6 +84,7 @@ namespace IDM_Crack_Tool
             progressBar1.Style = ProgressBarStyle.Blocks;
             act = Process_IDM.GetActivationStatus();
             LoadIDMStatus();
+            MessageBox.Show("Process completed!", ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void cButton4_MouseClick(object sender, MouseEventArgs e)
@@ -107,6 +108,8 @@ namespace IDM_Crack_Tool
             progressBar1.Style = ProgressBarStyle.Blocks;
             act = Process_IDM.GetActivationStatus();
             LoadIDMStatus();
+            MessageBox.Show("Process completed!", ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }
