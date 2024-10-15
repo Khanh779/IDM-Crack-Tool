@@ -5,6 +5,11 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDM-Crack-Tool", "IDM-Crack-Tool\IDM-Crack-Tool.csproj", "{67825972-8E46-4CD3-8CA0-D06DBFF61294}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScreenShot", "ScreenShot", "{0C56D2CA-3A51-48D3-B4FD-5D190ADE63A2}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\quock\OneDrive\Hình ảnh\Ảnh chụp màn hình\screenshot_0.png = C:\Users\quock\OneDrive\Hình ảnh\Ảnh chụp màn hình\screenshot_0.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

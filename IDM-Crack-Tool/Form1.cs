@@ -17,8 +17,22 @@ namespace IDM_Crack_Tool
             InitializeComponent();
         }
 
-        string fms = ($"   --- Internet Download Manager (IDM) ---\n- IDM Status: {0}\n- Version: {1}" +
-        "\n- Activation Status: {2}" + (Process_IDM.CheckInstalledIDM()==false?".":" ({3} day(s) remaining)."));
+       
+        string fms = $"   --- Internet Download Manager (IDM) ---\n" +
+                      $"- IDM Status: {{0}}\n" +
+                      $"- Version: {{1}}\n" +
+                      $"- Activation Status: {{2}}" ;
+
+        void LoadIDMStatus()
+        {
+            richTextBox1.Text = string.Format(fms,
+                Process_IDM.CheckInstalledIDM() ? "Installed" : "Not Installed!", 
+                Process_IDM.CheckInstalledIDM() ? Process_IDM.GetVersionIDM() : "N/A", 
+                act, 
+                "N/A" 
+            );
+        }
+
 
         protected override void OnClientSizeChanged(EventArgs e)
         {
@@ -29,29 +43,23 @@ namespace IDM_Crack_Tool
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           PB_Icon.Image=Icon.ToBitmap();
-           LB_Form_Text.Text = Text;
+            PB_Icon.Image = Icon.ToBitmap();
+            LB_Form_Text.Text = Text;
             LoadIDMStatus();
         }
 
         string act = Process_IDM.GetActivationStatus();
 
-        void LoadIDMStatus()
-        {
-            richTextBox1.Text = string.Format(fms, (Process_IDM.CheckInstalledIDM()? "Installed": "Not Installed!"),
-               Process_IDM.CheckInstalledIDM()? Process_IDM.GetVersionIDM():"N/A",act,
-                Process_IDM.GetDaysRemain());
-        }
-
+    
         protected override void OnPaint(PaintEventArgs e)
         {
-            e.Graphics.DrawRectangle(new Pen(new SolidBrush(Color.DodgerBlue),1), 0, 0, this.Width - 1, this.Height - 1);
+            e.Graphics.DrawRectangle(new Pen(new SolidBrush(Color.DodgerBlue), 1), 0, 0, this.Width - 1, this.Height - 1);
             base.OnPaint(e);
         }
 
         private void cButton2_MouseClick(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
                 WindowState = FormWindowState.Minimized;
             }
@@ -59,7 +67,7 @@ namespace IDM_Crack_Tool
 
         private void cButton1_MouseClick(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
                 Close();
             }
@@ -67,7 +75,7 @@ namespace IDM_Crack_Tool
 
         private void cButton3_MouseClick(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
                 backgroundWorker1.RunWorkerAsync();
                 progressBar1.Style = ProgressBarStyle.Marquee;
@@ -98,7 +106,7 @@ namespace IDM_Crack_Tool
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
-             Process_IDM.CrackIDM();
+            Process_IDM.CrackIDM();
             act = "Activating...";
             LoadIDMStatus();
         }

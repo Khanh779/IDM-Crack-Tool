@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -91,66 +92,71 @@ namespace IDM_Crack_Tool
             string version = "N/A";
             try
             {
-                RegistryKey key = Registry.LocalMachine.OpenSubKey("Software\\Internet Download Manager");
-                if (key != null)
+                //FileInfo fi = new FileInfo(GetIDMPath());
+                //version = FileVersionInfo.GetVersionInfo(fi.FullName).ProductVersion;
+
+                using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager"))
                 {
-                    version = key.GetValue("Version").ToString();
+                    if (key != null)
+                    {
+                        version = key.GetValue("idmvers") as string;
+                    }
                 }
             }
             catch (Exception ex)
             {
-                version = "Error:\n"+ex;
+                version = "Error:\n" + ex;
             }
             return version;
         }
 
-        public static string GetDaysRemain()
-        {
-            string idmRegistryPath = @"Software\Internet Download Manager";
-            string dateRemain = string.Empty;
-            try
-            {
-                using (RegistryKey key = Registry.LocalMachine.OpenSubKey(idmRegistryPath))
-                {
-                    if (key != null)
-                    {
-                        
-                        // Kiểm tra giá trị "ExpirationDate" để xác định ngày hết hạn dùng thử (nếu có)
-                        string expirationDateStr = key.GetValue("ExpirationDate") as string;
+        //public static string GetDaysRemain()
+        //{
+        //    string idmRegistryPath = @"Software\Internet Download Manager";
+        //    string dateRemain = string.Empty;
+        //    try
+        //    {
+        //        using (RegistryKey key = Registry.LocalMachine.OpenSubKey(idmRegistryPath))
+        //        {
+        //            if (key != null)
+        //            {
 
-                        if (!string.IsNullOrEmpty(expirationDateStr))
-                        {
-                            DateTime expirationDate;
-                            if (DateTime.TryParse(expirationDateStr, out expirationDate))
-                            {
-                                TimeSpan remainingDays = expirationDate - DateTime.Now;
-                                if (remainingDays.Days > 0)
-                                {
-                                    dateRemain = remainingDays.Days.ToString();
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        dateRemain = "Error";
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                dateRemain = ex.Message;
-            }
-            return dateRemain;
-        }
+        //                // Kiểm tra giá trị "ExpirationDate" để xác định ngày hết hạn dùng thử (nếu có)
+        //                string expirationDateStr = key.GetValue("ExpirationDate") as string;
+
+        //                if (!string.IsNullOrEmpty(expirationDateStr))
+        //                {
+        //                    DateTime expirationDate;
+        //                    if (DateTime.TryParse(expirationDateStr, out expirationDate))
+        //                    {
+        //                        TimeSpan remainingDays = expirationDate - DateTime.Now;
+        //                        if (remainingDays.Days > 0)
+        //                        {
+        //                            dateRemain = remainingDays.Days.ToString();
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //            else
+        //            {
+        //                dateRemain = "Error";
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        dateRemain = ex.Message;
+        //    }
+        //    return dateRemain;
+        //}
 
         public static string GetActivationStatus()
         {
-            string idmRegistryPath = @"Software\Internet Download Manager";
+            string idmRegistryPath = @"Software\DownloadManager";
             string activationStatus = string.Empty;
             try
             {
-                using (RegistryKey key = Registry.LocalMachine.OpenSubKey(idmRegistryPath))
+                using (RegistryKey key = Registry.CurrentUser.OpenSubKey(idmRegistryPath))
                 {
                     if (key != null)
                     {
@@ -169,13 +175,13 @@ namespace IDM_Crack_Tool
                     }
                     else
                     {
-                        activationStatus="Error";
+                        activationStatus = "Error";
                     }
                 }
             }
             catch (Exception ex)
             {
-               activationStatus= "Error";
+                activationStatus = "Error";
             }
             return activationStatus;
         }
@@ -192,6 +198,8 @@ namespace IDM_Crack_Tool
                     return;
                 }
 
+                KillIDM();
+
                 // Step 2: Ensure we have administrator rights
                 //EnsureAdminRights();
 
@@ -203,6 +211,15 @@ namespace IDM_Crack_Tool
             catch (Exception ex)
             {
                 Console.WriteLine($"Error during activation: {ex.Message}");
+            }
+        }
+
+        static void KillIDM()
+        {
+            Process[] processes = Process.GetProcessesByName("IDMan.exe");
+            foreach (Process process in processes)
+            {
+                process.Kill();
             }
         }
 
@@ -247,7 +264,7 @@ namespace IDM_Crack_Tool
             }
         }
 
-        static string[] licenses ={ "XO6HF-VTUS8-3B7KY-D24LG"};
+        static string[] licenses = { "XO6HF-VTUS8-3B7KY-D24LG" };
 
         static string[] emails = { "info@tonec.com", "info@idm.com" };
 
