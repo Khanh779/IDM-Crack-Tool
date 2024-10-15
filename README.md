@@ -17,15 +17,6 @@
 ## Contribution
 - I'm very grateful for everyone's contributions to help make this project better every day. If you have any ideas or improvements, please create an Issue or Pull request.
 
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/du122oo)
 
-## Đặc trưng
-- Đặt lại bản dùng thử của bạn
-- Kích hoạt IDM
-
-## Cài đặt
-1. Yêu cầu .Net Framework 4.7.2 hoặc cao hơn.
-2. Chạy với đặc quyền của quản trị viên để tránh lỗi hoặc truy xuất thông tin không đầy đủ.
-3. Visual Studio và các công cụ hỗ trợ chạy chương trình.
-
-## Đóng góp
-- Tôi rất biết ơn sự đóng góp của mọi người để giúp dự án này ngày một hoàn thiện hơn. Nếu bạn có bất kỳ ý tưởng hoặc cải tiến nào, vui lòng tạo Issue hoặc Pull requests.
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/Khanhtran283)
