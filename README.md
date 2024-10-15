@@ -3,6 +3,8 @@
 ## About
 - This is a tool that helps you reset IDM trial and crack IDM activation.
 
+![image](https://github.com/Khanh779/IDM-Crack-Tool/blob/master/ScreenShot/screenshot_0.png)
+
 ## Features
 - Reset your trial
 - Activate IDM
