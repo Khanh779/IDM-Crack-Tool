@@ -247,15 +247,26 @@ namespace IDM_Crack_Tool
             }
         }
 
-        static string[] licenses ={ "FOX6H-3KWH4-7TSIN-Q4US7", 
-                                    "9QNBL-L2641-Y7WVE-QEN3I", 
-                                    "NZ2CT-GBN1G-8BQ8J-CAW9E", 
-                                    "QLNQ8-KSN5U-1FW7O-24W8X" };
+        static string[] licenses ={ "XO6HF-VTUS8-3B7KY-D24LG"};
 
         static string[] emails = { "info@tonec.com", "info@idm.com" };
 
         private static void ActivateIDM()
         {
+            //string[] valuesToRead = new string[]
+            //           {
+            //                "FName",
+            //                "LName",
+            //                "Email",
+            //                "Serial",
+            //                "scansk",
+            //                "tvfrdt",
+            //                "radxcnt",
+            //                "LstCheck",
+            //                "ptrk_scdt",
+            //                "LastCheckQU"
+            //           };
+
             // Modify registry keys to activate IDM
             using (var key = Registry.CurrentUser.CreateSubKey("Software\\DownloadManager"))
             {

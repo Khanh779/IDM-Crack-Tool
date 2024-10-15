@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.PN_Title = new System.Windows.Forms.Panel();
+            this.cButton2 = new IDM_Crack_Tool.Custom_Controls.CButton();
+            this.cButton1 = new IDM_Crack_Tool.Custom_Controls.CButton();
             this.LB_Form_Text = new System.Windows.Forms.Label();
             this.PB_Icon = new System.Windows.Forms.PictureBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -37,8 +39,6 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.cButton4 = new IDM_Crack_Tool.Custom_Controls.CButton();
             this.cButton3 = new IDM_Crack_Tool.Custom_Controls.CButton();
-            this.cButton2 = new IDM_Crack_Tool.Custom_Controls.CButton();
-            this.cButton1 = new IDM_Crack_Tool.Custom_Controls.CButton();
             this.cDragForm1 = new IDM_Crack_Tool.Custom_Controls.CDragForm();
             this.cDragForm2 = new IDM_Crack_Tool.Custom_Controls.CDragForm();
             this.cDragForm3 = new IDM_Crack_Tool.Custom_Controls.CDragForm();
@@ -58,6 +58,48 @@
             this.PN_Title.Name = "PN_Title";
             this.PN_Title.Size = new System.Drawing.Size(430, 35);
             this.PN_Title.TabIndex = 0;
+            // 
+            // cButton2
+            // 
+            this.cButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cButton2.ButtonHoveredColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(58)))));
+            this.cButton2.ButtonHoveredColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(58)))));
+            this.cButton2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
+            this.cButton2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
+            this.cButton2.ButtonPressedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.cButton2.ButtonPressedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.cButton2.Font = new System.Drawing.Font("Webdings", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.cButton2.Location = new System.Drawing.Point(369, 2);
+            this.cButton2.Name = "cButton2";
+            this.cButton2.Size = new System.Drawing.Size(30, 30);
+            this.cButton2.StringTrimming = System.Drawing.StringTrimming.EllipsisCharacter;
+            this.cButton2.TabIndex = 3;
+            this.cButton2.Text = "0";
+            this.cButton2.TextHoveredColor = System.Drawing.Color.Gainsboro;
+            this.cButton2.TextNormalColor = System.Drawing.Color.LightGray;
+            this.cButton2.TextPressedColor = System.Drawing.Color.Silver;
+            this.cButton2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cButton2_MouseClick);
+            // 
+            // cButton1
+            // 
+            this.cButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cButton1.ButtonHoveredColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(58)))));
+            this.cButton1.ButtonHoveredColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(58)))));
+            this.cButton1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
+            this.cButton1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
+            this.cButton1.ButtonPressedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.cButton1.ButtonPressedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.cButton1.Font = new System.Drawing.Font("Webdings", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.cButton1.Location = new System.Drawing.Point(403, 2);
+            this.cButton1.Name = "cButton1";
+            this.cButton1.Size = new System.Drawing.Size(30, 30);
+            this.cButton1.StringTrimming = System.Drawing.StringTrimming.EllipsisCharacter;
+            this.cButton1.TabIndex = 1;
+            this.cButton1.Text = "r";
+            this.cButton1.TextHoveredColor = System.Drawing.Color.Gainsboro;
+            this.cButton1.TextNormalColor = System.Drawing.Color.LightGray;
+            this.cButton1.TextPressedColor = System.Drawing.Color.Silver;
+            this.cButton1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cButton1_MouseClick);
             // 
             // LB_Form_Text
             // 
@@ -103,8 +145,8 @@
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(380, 155);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "          --- Internet Download Manager (IDM) ---\n- IDM Status: Installed\n- Versi" +
-    "on: ...\n- Activation Status: N/A\n";
+            this.richTextBox1.Text = "   --- Internet Download Manager (IDM) ---\n- IDM Status: Installed\n- Version: ..." +
+    "\n- Activation Status: N/A\n";
             this.richTextBox1.WordWrap = false;
             // 
             // backgroundWorker1
@@ -158,48 +200,6 @@
             this.cButton3.TextNormalColor = System.Drawing.Color.LightGray;
             this.cButton3.TextPressedColor = System.Drawing.Color.Silver;
             this.cButton3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cButton3_MouseClick);
-            // 
-            // cButton2
-            // 
-            this.cButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cButton2.ButtonHoveredColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(58)))));
-            this.cButton2.ButtonHoveredColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(58)))));
-            this.cButton2.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.cButton2.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.cButton2.ButtonPressedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.cButton2.ButtonPressedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.cButton2.Font = new System.Drawing.Font("Webdings", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.cButton2.Location = new System.Drawing.Point(369, 2);
-            this.cButton2.Name = "cButton2";
-            this.cButton2.Size = new System.Drawing.Size(30, 30);
-            this.cButton2.StringTrimming = System.Drawing.StringTrimming.EllipsisCharacter;
-            this.cButton2.TabIndex = 3;
-            this.cButton2.Text = "0";
-            this.cButton2.TextHoveredColor = System.Drawing.Color.Gainsboro;
-            this.cButton2.TextNormalColor = System.Drawing.Color.LightGray;
-            this.cButton2.TextPressedColor = System.Drawing.Color.Silver;
-            this.cButton2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cButton2_MouseClick);
-            // 
-            // cButton1
-            // 
-            this.cButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cButton1.ButtonHoveredColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(58)))));
-            this.cButton1.ButtonHoveredColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(58)))));
-            this.cButton1.ButtonNormalColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.cButton1.ButtonNormalColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(42)))), ((int)(((byte)(48)))));
-            this.cButton1.ButtonPressedColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.cButton1.ButtonPressedColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.cButton1.Font = new System.Drawing.Font("Webdings", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.cButton1.Location = new System.Drawing.Point(403, 2);
-            this.cButton1.Name = "cButton1";
-            this.cButton1.Size = new System.Drawing.Size(30, 30);
-            this.cButton1.StringTrimming = System.Drawing.StringTrimming.EllipsisCharacter;
-            this.cButton1.TabIndex = 1;
-            this.cButton1.Text = "r";
-            this.cButton1.TextHoveredColor = System.Drawing.Color.Gainsboro;
-            this.cButton1.TextNormalColor = System.Drawing.Color.LightGray;
-            this.cButton1.TextPressedColor = System.Drawing.Color.Silver;
-            this.cButton1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cButton1_MouseClick);
             // 
             // cDragForm1
             // 

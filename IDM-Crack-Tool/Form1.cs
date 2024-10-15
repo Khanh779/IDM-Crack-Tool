@@ -17,8 +17,8 @@ namespace IDM_Crack_Tool
             InitializeComponent();
         }
 
-        string fms = ("          --- Internet Download Manager (IDM) ---\n- IDM Status: {0}\n- Version: {1}" +
-        "\n- Activation Status: {2}" + (Process_IDM.CheckInstalledIDM()==false?".":"( {3} day(s) remaining)."));
+        string fms = ($"   --- Internet Download Manager (IDM) ---\n- IDM Status: {0}\n- Version: {1}" +
+        "\n- Activation Status: {2}" + (Process_IDM.CheckInstalledIDM()==false?".":" ({3} day(s) remaining)."));
 
         protected override void OnClientSizeChanged(EventArgs e)
         {
